@@ -1,3 +1,17 @@
+- name: ensure python is installed
+  apt:
+    name: python3
+    state: present
+
+- name: ensure pip is installed
+  apt:
+    name: python3-pip
+    state: present
+
+- name: ensure docker sdk for python is installed
+  pip:
+    name: docker
+
 - name: pull applicaction image
   docker_image:
     name: "{{ application_image }}"
